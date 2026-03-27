@@ -41,6 +41,7 @@ class SwotTest : TestCase() {
         assertEquals (true , isAcademic("lee@stud.uni-corvinus.hu"))      
         assertEquals (true , isAcademic("lee@harvard.edu"))               
         assertEquals (true , isAcademic("lee@mail.harvard.edu"))
+        assertEquals (true , isAcademic("nikhilshukla.cse21@satyug.edu.in"))
 
         assertEquals(false, isAcademic("imposter@si.edu"))
         assertEquals(false, isAcademic("lee@mdu.edu.rs"))
@@ -54,6 +55,7 @@ class SwotTest : TestCase() {
         assertTrue(findSchoolNames("lreilly@cs.strath.ac.uk").contains("uka tarsadia university,bardoli"))
         assertEquals("BRG Fadingerstraße Linz, Austria", findSchoolNames("lreilly@fadi.at").single())
         assertEquals("St. Petersburg State University", findSchoolNames("max@spbu.ru ").single())
+        assertEquals("Satyug University", findSchoolNames("nikhilshukla.cse21@satyug.edu.in").single())
         assertEquals(0, findSchoolNames("foo@shop.com").size)
     }
 }
